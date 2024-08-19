@@ -32,10 +32,11 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          cd /root/CICD-react-frontend-class
-          sudo git checkout midocker
-          sudo git pull midocker
-          sudo docker-compose pull
-          sudo docker-compose up -d --force-recreate
+          cd /root/CICD-react-frontend-class || exit 1
+          git fetch --all
+          git checkout midocker || git checkout -b midocker origin/midocker
+          git pull origin midocker
+          docker-compose pull
+          docker-compose up -d --force-recreate
