@@ -1,7 +1,7 @@
 name: docker-deploy
 on:
   push:
-    branches: [ "docker" ]
+    branches: [ "midocker" ]
 jobs:
   build-and-push-to-dockerhub:
     runs-on: ubuntu-latest
