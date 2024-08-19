@@ -39,3 +39,4 @@ jobs:
           sudo git pull docker
           sudo docker-compose pull
           sudo docker-compose up -d --force-recreate
+          
