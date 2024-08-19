@@ -34,14 +34,8 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         script: |
-          cd /root/CICD-react-frontend-class || mkdir -p /root/CICD-react-frontend-class
           cd /root/CICD-react-frontend-class
-          if [ ! -d .git ]; then
-            git init
-            git remote add origin https://github.com/Mrkaykab/CICD-react-frontend-class.git
-          fi
-          git fetch --all
-          git checkout midocker || git checkout -b midocker origin/midocker
-          git pull origin midocker
-          docker-compose pull
-          docker-compose up -d --force-recreate
+          sudo git checkout midocker
+          sudo git pull midocker
+          sudo docker-compose pull
+          sudo docker-compose up -d --force-recreate
