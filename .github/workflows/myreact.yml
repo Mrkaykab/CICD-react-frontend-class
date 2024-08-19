@@ -34,7 +34,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         script: |
-          cd /root/CICD-react-frontend
+          cd /root/CICD-react-frontend-class
           sudo git checkout docker
           sudo git pull docker
           sudo docker-compose pull
