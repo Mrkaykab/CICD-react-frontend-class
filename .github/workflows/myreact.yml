@@ -18,9 +18,9 @@ jobs:
     - name: Build tag and push 
       uses: mr-smithers-excellent/docker-build-push@v3
       with:
-        image: soundnw/fullstack
+        image: mrkaykab/fullstack
         registry: docker.io
-        username: ${{ secrets.DOCKER_USERNAME }}
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
   
   Deploy:
@@ -39,6 +39,3 @@ jobs:
           sudo git pull docker
           sudo docker-compose pull
           sudo docker-compose up -d --force-recreate
-
-          
-          
