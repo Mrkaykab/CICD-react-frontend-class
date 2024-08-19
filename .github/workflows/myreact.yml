@@ -44,4 +44,4 @@ jobs:
           git checkout midocker || git checkout -b midocker origin/midocker
           git pull origin midocker
           docker-compose pull
-          docker-compose up -d --force-recreat
+          docker-compose up -d --force-recreate
