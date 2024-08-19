@@ -35,7 +35,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         script: |
           cd /root/CICD-react-frontend-class
-          sudo git checkout docker
-          sudo git pull docker
+          sudo git checkout midocker
+          sudo git pull midocker
           sudo docker-compose pull
           sudo docker-compose up -d --force-recreate
